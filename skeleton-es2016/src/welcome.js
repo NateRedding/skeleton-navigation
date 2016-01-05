@@ -14,7 +14,8 @@ export class Welcome {
   }
 
   get isPristine() {
-    return this.areEqual(this.name, this.pristine);
+    let strippedName = JSON.parse(JSON.stringify(this.name));
+    return this.areEqual(strippedName, this.pristine);
   }
 
   // borrowed from app-contacts
